@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DigitalClock from "../DigitalClock/DigitalClock";
 import Timedown from "../Timedown/Timedown";
 import Timestop from "../Timestop/Timestop";
+import "../../styles/styles.css";
 
 export default function ClocksContainer() {
   const [show, setShow] = useState({
@@ -19,7 +20,7 @@ export default function ClocksContainer() {
   };
 
   return (
-    <div>
+    <div className="custom-container">
       <button onClick={handleClick} name="digitalClock">
         Digital Clock
       </button>
