@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 export default function Timedown() {
   const [time, setTime] = useState(0);
@@ -59,38 +60,49 @@ export default function Timedown() {
 
   return (
     <div>
-      <h3>
+      <h1>
         {" "}
         {condition
           ? timeFormat(time)
           : timeFormat(input.hour * 36000 + input.min * 600 + input.sec * 10)}
-      </h3>
-      <input
-        type="number"
-        onChange={handleTimer}
-        name="hour"
-        value={input.hour}
-        max="99"
-        min="0"
-      />
-      <input
-        type="number"
-        onChange={handleTimer}
-        name="min"
-        value={input.min}
-        max="59"
-        min="0"
-      />
-      <input
-        type="number"
-        onChange={handleTimer}
-        name="sec"
-        value={input.sec}
-        max="59"
-        min="0"
-      />
-      <button onClick={handleClick}>{condition ? "Restart!" : "Start!"}</button>
-      {condition ? <button onClick={handleCondition}>"Pause" </button> : null}
+      </h1>
+      <InputGroup className="mb-3">
+        <FormControl
+          aria-label="First name"
+          type="number"
+          onChange={handleTimer}
+          name="hour"
+          value={input.hour}
+          max="99"
+          min="0"
+        />
+        <FormControl
+          aria-label="Last name"
+          type="number"
+          onChange={handleTimer}
+          name="min"
+          value={input.min}
+          max="59"
+          min="0"
+        />
+        <FormControl
+          aria-label="Last name"
+          type="number"
+          onChange={handleTimer}
+          name="sec"
+          value={input.sec}
+          max="59"
+          min="0"
+        />
+      </InputGroup>
+      <Button onClick={handleClick} variant="outline-secondary" size="lg">
+        {condition ? "Restart!" : "Start!"}
+      </Button>
+      {condition ? (
+        <Button onClick={handleCondition} variant="outline-secondary" size="lg">
+          "Pause"
+        </Button>
+      ) : null}
       <h3>{time < 0 ? "Time over!!!" : null}</h3>
     </div>
   );

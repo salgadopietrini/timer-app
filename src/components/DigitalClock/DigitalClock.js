@@ -7,5 +7,5 @@ export default function DigitalClock() {
     setTimeout(() => setClock(new Date().toLocaleTimeString()), 1000);
   });
 
-  return <div>{clock}</div>;
+  return <h1>{clock}</h1>;
 }
