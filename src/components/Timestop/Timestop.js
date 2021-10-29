@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import "../../styles/styles.css";
 
 export default function Timestop() {
   const [stop, setStop] = useState(0);
@@ -42,14 +43,15 @@ export default function Timestop() {
       : "99:59:59:9";
 
   return (
-    <div>
+    <div style={{ width: "200px" }}>
+      <h1>{stopFormat}</h1>
       <Button
         onClick={handleClick}
         variant="outline-secondary"
         size="lg"
         style={{ marginRight: "25px" }}
       >
-        {stopFormat}
+        {condition ? "Pause" : "Start"}
       </Button>
 
       {condition === false && stop > 0 ? (

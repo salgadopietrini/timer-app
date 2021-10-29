@@ -11,7 +11,7 @@ export default function Timedown() {
   const [condition, setCondition] = useState(false);
 
   useEffect(() => {
-    if (condition) {
+    if (condition && time > 0) {
       setTimeout(() => setTime((time) => time - 1), 100);
     }
   });
@@ -61,8 +61,9 @@ export default function Timedown() {
   return (
     <div>
       <h1>
-        {" "}
         {condition
+          ? timeFormat(time)
+          : time > 0
           ? timeFormat(time)
           : timeFormat(input.hour * 36000 + input.min * 600 + input.sec * 10)}
       </h1>
@@ -95,12 +96,24 @@ export default function Timedown() {
           min="0"
         />
       </InputGroup>
-      <Button onClick={handleClick} variant="outline-secondary" size="lg">
-        {condition ? "Restart!" : "Start!"}
-      </Button>
+      {condition ? null : (
+        <Button
+          onClick={handleClick}
+          variant="outline-secondary"
+          size="lg"
+          style={{ marginRight: "25px" }}
+        >
+          {condition ? "Restart!" : "Start!"}
+        </Button>
+      )}
+      {condition ? null : time > 0 ? (
+        <Button onClick={handleCondition} variant="outline-secondary" size="lg">
+          Continue
+        </Button>
+      ) : null}
       {condition ? (
         <Button onClick={handleCondition} variant="outline-secondary" size="lg">
-          "Pause"
+          Pause
         </Button>
       ) : null}
       <h3>{time < 0 ? "Time over!!!" : null}</h3>

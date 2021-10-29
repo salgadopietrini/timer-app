@@ -22,14 +22,29 @@ export default function ClocksContainer() {
   return (
     <div>
       <div className="custom-container">
-        <ButtonGroup aria-label="Timer options">
-          <Button onClick={handleClick} name="digitalClock" variant="secondary">
+        <ButtonGroup aria-label="Timer options" style={{ marginTop: "50px" }}>
+          <Button
+            onClick={handleClick}
+            name="digitalClock"
+            variant="secondary"
+            size="lg"
+          >
             Digital Clock
           </Button>
-          <Button onClick={handleClick} name="timedown" variant="secondary">
+          <Button
+            onClick={handleClick}
+            name="timedown"
+            variant="secondary"
+            size="lg"
+          >
             Timedown
           </Button>
-          <Button onClick={handleClick} name="timestop" variant="secondary">
+          <Button
+            onClick={handleClick}
+            name="timestop"
+            variant="secondary"
+            size="lg"
+          >
             Timestop
           </Button>
         </ButtonGroup>
