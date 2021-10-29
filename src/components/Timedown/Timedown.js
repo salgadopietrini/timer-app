@@ -116,7 +116,7 @@ export default function Timedown() {
           Pause
         </Button>
       ) : null}
-      <h3>{time < 0 ? "Time over!!!" : null}</h3>
+      <h3>{time === 0 && condition ? "Time over!!!" : null}</h3>
     </div>
   );
 }
