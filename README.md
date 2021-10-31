@@ -1,8 +1,11 @@
 # timer-app is an app to manage time created using React
 
 It conditionally renders three different timers:
+
 -A  regular clock
+
 -A countdown timer
+
 -A chronometer
 
 ![alt text](https://i.ibb.co/bbn6F5p/timer-app-LG.png)
