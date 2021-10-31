@@ -8,6 +8,9 @@ It conditionally renders three different timers:
 
 -A chronometer
 
+It uses bootstrap-react for all the styling 
+
+
 ![alt text](https://i.ibb.co/bbn6F5p/timer-app-LG.png)
 
 ## How to use
